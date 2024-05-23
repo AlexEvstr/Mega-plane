@@ -666,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701406765}
   - component: {fileID: 1701406766}
+  - component: {fileID: 1701406767}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -704,6 +705,19 @@ MonoBehaviour:
   obstacle2: {fileID: 7600860721882111349, guid: e13cd042ffecb4cc088faf2361cc3965, type: 3}
   obstacle3: {fileID: 8561989311543969784, guid: d783fc849dcd242baa6d99f5d7789f88, type: 3}
   obstacle4: {fileID: 4047518575967113210, guid: 12886e263409d420d8d12121f52a32a3, type: 3}
+--- !u!114 &1701406767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701406764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74522a38214274e46b49680eeb164f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 5180129623916214054, guid: b87d72b993a0b4c92a28ddcc03593000, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
