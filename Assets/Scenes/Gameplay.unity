@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 1701406765}
   - component: {fileID: 1701406766}
   - component: {fileID: 1701406767}
+  - component: {fileID: 1701406768}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -718,6 +719,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 5180129623916214054, guid: b87d72b993a0b4c92a28ddcc03593000, type: 3}
+--- !u!114 &1701406768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701406764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b158240ea86c418490a37425a8dd21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldPrefab: {fileID: 2149334418878896234, guid: ef5b8873c17c44de2bf194316e19e5ec, type: 3}
+  magnetPrefab: {fileID: 34101565801708256, guid: adc2bcc842c6840b487f74b985cb1be4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
