@@ -11,6 +11,7 @@ public class CoinSpawner : MonoBehaviour
     private float maxX = 2.0f;
     private float minSpacing = 0.7f;
     private int maxCoinsPerRow = 3;
+    public float checkRadius = 1.0f; // Радиус проверки наличия других объектов
 
     void Start()
     {
@@ -29,7 +30,10 @@ public class CoinSpawner : MonoBehaviour
 
             foreach (Vector2 position in positions)
             {
-                Instantiate(coinPrefab, new Vector3(position.x, position.y, 0.0f), Quaternion.identity);
+                if (IsPositionFree(position))
+                {
+                    Instantiate(coinPrefab, new Vector3(position.x, position.y, 0.0f), Quaternion.identity);
+                }
             }
         }
     }
@@ -78,5 +82,11 @@ public class CoinSpawner : MonoBehaviour
         }
 
         return positions;
+    }
+
+    private bool IsPositionFree(Vector2 position)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, checkRadius);
+        return colliders.Length == 1;
     }
 }

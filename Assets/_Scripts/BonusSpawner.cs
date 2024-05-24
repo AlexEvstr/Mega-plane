@@ -11,6 +11,7 @@ public class BonusSpawner : MonoBehaviour
     private float minX = -2.0f;
     private float maxX = 2.0f;
     private float minSpacing = 1.0f;
+    public float checkRadius = 1.0f; // Радиус проверки наличия других объектов
 
     void Start()
     {
@@ -27,21 +28,19 @@ public class BonusSpawner : MonoBehaviour
             int numberOfBonuses = Random.Range(1, 3); // Спавн 1 или 2 бонусов
             Vector2[] positions = GeneratePositions(numberOfBonuses);
 
-            if (numberOfBonuses == 1)
+            for (int i = 0; i < numberOfBonuses; i++)
             {
-                if (Random.Range(0, 2) == 0)
+                if (IsPositionFree(positions[i]))
                 {
-                    Instantiate(shieldPrefab, new Vector3(positions[0].x, spawnY, 0.0f), Quaternion.identity);
+                    if (i == 0)
+                    {
+                        Instantiate(shieldPrefab, new Vector3(positions[i].x, spawnY, 0.0f), Quaternion.identity);
+                    }
+                    else
+                    {
+                        Instantiate(magnetPrefab, new Vector3(positions[i].x, spawnY, 0.0f), Quaternion.identity);
+                    }
                 }
-                else
-                {
-                    Instantiate(magnetPrefab, new Vector3(positions[0].x, spawnY, 0.0f), Quaternion.identity);
-                }
-            }
-            else
-            {
-                Instantiate(shieldPrefab, new Vector3(positions[0].x, spawnY, 0.0f), Quaternion.identity);
-                Instantiate(magnetPrefab, new Vector3(positions[1].x, spawnY, 0.0f), Quaternion.identity);
             }
         }
     }
@@ -75,5 +74,11 @@ public class BonusSpawner : MonoBehaviour
         }
 
         return positions;
+    }
+
+    private bool IsPositionFree(Vector2 position)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, checkRadius);
+        return colliders.Length == 1;
     }
 }

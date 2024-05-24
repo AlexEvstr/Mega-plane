@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        Screen.orientation = ScreenOrientation.Portrait;
         string onboard = PlayerPrefs.GetString("onBoard", "");
         if (onboard == "")
         {

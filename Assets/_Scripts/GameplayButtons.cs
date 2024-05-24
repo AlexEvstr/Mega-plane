@@ -10,6 +10,7 @@ public class GameplayButtons : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     public void RestartGame()

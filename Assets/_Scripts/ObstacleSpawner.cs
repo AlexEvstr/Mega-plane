@@ -7,6 +7,7 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject obstacle2; // Префаб для второго препятствия (справа)
     public GameObject obstacle3; // Префаб для третьего препятствия (случайное положение)
     public GameObject obstacle4; // Префаб для четвертого препятствия (случайное положение)
+    public float checkRadius = 1.0f; // Радиус проверки наличия других объектов
 
     private float spawnInterval = 2.0f;
 
@@ -50,6 +51,15 @@ public class ObstacleSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(obstacleToSpawn, spawnPosition, Quaternion.identity);
+        if (IsPositionFree(spawnPosition))
+        {
+            Instantiate(obstacleToSpawn, spawnPosition, Quaternion.identity);
+        }
+    }
+
+    private bool IsPositionFree(Vector3 position)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, checkRadius);
+        return colliders.Length == 1;
     }
 }
