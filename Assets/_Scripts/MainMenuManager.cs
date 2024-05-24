@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text _coinsText; 
     [SerializeField] private TMP_Text _bestScoreText;
+    [SerializeField] private GameObject _tutorial;
     public static int Coins;
 
     private void Start()
@@ -25,5 +26,15 @@ public class MainMenuManager : MonoBehaviour
     private void Update()
     {
         _coinsText.text = Coins.ToString();
+    }
+
+    public void OpenTutorial()
+    {
+        _tutorial.SetActive(true);
+    }
+
+    public void CloseTutorial()
+    {
+        _tutorial.SetActive(false);
     }
 }
