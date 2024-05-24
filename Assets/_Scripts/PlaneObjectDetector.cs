@@ -7,12 +7,6 @@ public class PlaneObjectDetector : MonoBehaviour
     [SerializeField] private ShieldBonus _shieldBonus;
     [SerializeField] private MagnetBonus _magnetBonus;
 
-    private void Awake()
-    {
-        gameObject.AddComponent<PolygonCollider2D>();
-        gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))

@@ -3291,6 +3291,7 @@ GameObject:
   - component: {fileID: 1701406772}
   - component: {fileID: 1701406773}
   - component: {fileID: 1701406774}
+  - component: {fileID: 1701406775}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3440,6 +3441,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magnet: {fileID: 662718803}
+--- !u!114 &1701406775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701406764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb233a01935a844089f6c7ea7c1b21dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 977680026}
+  _planeObject: {fileID: 977680025}
+  _planeSprites:
+  - {fileID: 21300000, guid: 44caf1e4ffc57444091f5ff8fbbbefdc, type: 3}
+  - {fileID: 21300000, guid: 9801e08af0d034c398cb34b32b91cef5, type: 3}
+  - {fileID: 21300000, guid: 86ab7858304854662b9e50f722051d4b, type: 3}
 --- !u!1 &1762667354
 GameObject:
   m_ObjectHideFlags: 0
