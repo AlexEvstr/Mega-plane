@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EndlessBG : MonoBehaviour
 {
-    private float _speed = 2f;
+    private float _speed = 3f;
     private Vector2 _zeroPosition;
     private float _middleOfBackground;
 

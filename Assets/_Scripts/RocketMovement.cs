@@ -8,6 +8,6 @@ public class RocketMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(_direction * Time.deltaTime * 2);
+        transform.Translate(_direction * Time.deltaTime * 3);
     }
 }
