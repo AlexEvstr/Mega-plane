@@ -6,7 +6,9 @@ public class PlaneObjectDetector : MonoBehaviour
 {
     [SerializeField] private CoinsCounter _coinsCounter;
     [SerializeField] private ScreenFadeAndShake _screenFadeAndShake;
-    private void Start()
+    [SerializeField] private ShieldBonus _shieldBonus;
+
+    private void Awake()
     {
         gameObject.AddComponent<PolygonCollider2D>();
         gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
@@ -31,8 +33,8 @@ public class PlaneObjectDetector : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
-            Debug.Log("shield");
             Destroy(collision.gameObject);
+            _shieldBonus.ActivateShield();
         }
     }
 }

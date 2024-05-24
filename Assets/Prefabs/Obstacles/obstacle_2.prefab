@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5605038964123024827}
   - component: {fileID: 7427184359807582902}
   - component: {fileID: -5042374434604897833}
-  - component: {fileID: 5123077591308439565}
+  - component: {fileID: -4474992519709680001}
   m_Layer: 0
   m_Name: obstacle_2
   m_TagString: Enemy
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rocket: {fileID: 2733714344423040768, guid: 12c6a50a6bd534bdda2d1c090506300c, type: 3}
   _yPositionToShoot: 3
---- !u!61 &5123077591308439565
-BoxCollider2D:
+--- !u!70 &-4474992519709680001
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -252,16 +252,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034622848, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.782, y: 1}
-    newSize: {x: 0.782, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.47534, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.03340611, y: 0}
+  m_Size: {x: 0.44793898, y: 1}
+  m_Direction: 0
