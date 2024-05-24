@@ -10,6 +10,8 @@ public class BuySkinButton : MonoBehaviour
     [SerializeField] private GameObject _cost;
     [SerializeField] private GameObject _choosen;
 
+    [SerializeField] private MenuMusicController _menuMusicController;
+
     private void Start()
     {
         string planeName = PlayerPrefs.GetString("Plane", "");
@@ -24,10 +26,11 @@ public class BuySkinButton : MonoBehaviour
             MainMenuManager.Coins -= _totalCost;
             PlayerPrefs.SetInt("coinsCount", MainMenuManager.Coins);
             SaveStatus();
+            _menuMusicController.BuySound();
         }
         else
         {
-            
+            _menuMusicController.ClickSound();
         }
 
         PlayerPrefs.SetString("Plane", gameObject.name);

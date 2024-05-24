@@ -11,8 +11,11 @@ public class ScreenFadeAndShake : MonoBehaviour
     private float shakeDuration = 1.0f;
     private float shakeMagnitude = 0.5f;
 
+    private GameAudioController _gameAudioController;
+
     void Start()
     {
+        _gameAudioController = GetComponent<GameAudioController>();
         whiteScreenImage.gameObject.SetActive(false);
     }
 
@@ -23,6 +26,7 @@ public class ScreenFadeAndShake : MonoBehaviour
 
     private IEnumerator FadeAndShake()
     {
+        _gameAudioController.PlaneExplosionSound();
         whiteScreenImage.gameObject.SetActive(true);
         whiteScreenImage.color = new Color(1, 1, 1, 1);
 
@@ -60,5 +64,6 @@ public class ScreenFadeAndShake : MonoBehaviour
 
         mainCamera.transform.position = originalPosition;
         _losePanel.SetActive(true);
+        _gameAudioController.GameOverSound();
     }
 }

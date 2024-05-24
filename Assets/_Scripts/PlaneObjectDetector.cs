@@ -7,6 +7,8 @@ public class PlaneObjectDetector : MonoBehaviour
     [SerializeField] private ShieldBonus _shieldBonus;
     [SerializeField] private MagnetBonus _magnetBonus;
 
+    [SerializeField] private GameAudioController _gameAudioController;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))
@@ -21,11 +23,13 @@ public class PlaneObjectDetector : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Magnet"))
         {
+            _gameAudioController.BonusSound();
             Destroy(collision.gameObject);
             _magnetBonus.ActivateMagnet();
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
+            _gameAudioController.BonusSound();
             Destroy(collision.gameObject);
             _shieldBonus.ActivateShield();
         }

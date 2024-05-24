@@ -7,8 +7,14 @@ public class MenuMusicController : MonoBehaviour
     [SerializeField] private GameObject _soundsOn;
     [SerializeField] private GameObject _soundsOff;
 
+    [SerializeField] private AudioClip _clickSound;
+    [SerializeField] private AudioClip _buySound;
+
+    private AudioSource _audioSource;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         float sounds = PlayerPrefs.GetFloat("Sounds", 1);
         if (sounds == 1)
         {
@@ -34,5 +40,15 @@ public class MenuMusicController : MonoBehaviour
         _soundsOn.SetActive(true);
         AudioListener.volume = 1;
         PlayerPrefs.SetFloat("Sounds", 1);
+    }
+
+    public void ClickSound()
+    {
+        _audioSource.PlayOneShot(_clickSound);
+    }
+
+    public void BuySound()
+    {
+        _audioSource.PlayOneShot(_buySound);
     }
 }
