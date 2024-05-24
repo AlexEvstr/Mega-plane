@@ -1228,8 +1228,8 @@ Transform:
   m_GameObject: {fileID: 662718803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.717, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.709, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 977680027}
@@ -2224,6 +2224,7 @@ MonoBehaviour:
   _coinsCounter: {fileID: 1701406769}
   _screenFadeAndShake: {fileID: 1701406770}
   _shieldBonus: {fileID: 1701406773}
+  _magnetBonus: {fileID: 1701406774}
 --- !u!50 &977680030
 Rigidbody2D:
   serializedVersion: 4
@@ -3289,6 +3290,7 @@ GameObject:
   - component: {fileID: 1701406771}
   - component: {fileID: 1701406772}
   - component: {fileID: 1701406773}
+  - component: {fileID: 1701406774}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3425,6 +3427,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shield: {fileID: 629938738}
   _plane: {fileID: 977680025}
+--- !u!114 &1701406774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701406764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5450ff3d71254dd3aedd86833da4044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _magnet: {fileID: 662718803}
 --- !u!1 &1762667354
 GameObject:
   m_ObjectHideFlags: 0

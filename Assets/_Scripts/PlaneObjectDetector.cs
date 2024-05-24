@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneObjectDetector : MonoBehaviour
@@ -7,6 +5,7 @@ public class PlaneObjectDetector : MonoBehaviour
     [SerializeField] private CoinsCounter _coinsCounter;
     [SerializeField] private ScreenFadeAndShake _screenFadeAndShake;
     [SerializeField] private ShieldBonus _shieldBonus;
+    [SerializeField] private MagnetBonus _magnetBonus;
 
     private void Awake()
     {
@@ -28,8 +27,8 @@ public class PlaneObjectDetector : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Magnet"))
         {
-            Debug.Log("magnet");
             Destroy(collision.gameObject);
+            _magnetBonus.ActivateMagnet();
         }
         else if (collision.gameObject.CompareTag("Shield"))
         {
