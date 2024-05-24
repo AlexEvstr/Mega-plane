@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaneObjectDetector : MonoBehaviour
 {
     [SerializeField] private CoinsCounter _coinsCounter;
+    [SerializeField] private ScreenFadeAndShake _screenFadeAndShake;
     private void Start()
     {
         gameObject.AddComponent<PolygonCollider2D>();
@@ -20,8 +21,8 @@ public class PlaneObjectDetector : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("enemy");
-            Destroy(collision.gameObject);
+            _screenFadeAndShake.TriggerFadeAndShake();
+            Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Magnet"))
         {
